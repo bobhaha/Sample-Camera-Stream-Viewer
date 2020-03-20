@@ -5,33 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Sample_Camera_Stream"
         mc:Ignorable="d"
-        Title="Sample Camera Viewer" Height="577.754" Width="800"
+        Title="Sample Camera Viewer" Height="597.754" Width="800"
         ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <GroupBox Header="Connect to USB device" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" VerticalAlignment="Top" Width="200">
             <Grid Margin="0,0,-2,0">
-                <Button Content="Connect" Width="75" Height="25" Click="ConnectUSBCamera_Click" Margin="11,65,104,10" RenderTransformOrigin="0.794,0.972"/>
-                <Button Content="Disconnect" Width="75" Height="25" Click="DisconnectUSBCamera_Click" Margin="105,65,10,10"/>
-                <ComboBox HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="170"/>
+                <Button Content="Connect" Width="75" Click="ConnectUSBCamera_Click" Margin="11,65,104,9" RenderTransformOrigin="0.794,0.972"/>
+                <Button Content="Disconnect" Width="75" Click="DisconnectUSBCamera_Click" Margin="105,65,10,9"/>
+                <ComboBox Name="CameraList" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Width="170"/>
                 <Label Content="Device Name:" HorizontalAlignment="Left" Margin="10,1,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="Connect to IP device" HorizontalAlignment="Left" Height="122" Margin="215,10,0,0" VerticalAlignment="Top" Width="567">
             <Grid>
                 <Label Content="Host:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                <Button Content="Connect" Width="75" Height="25" Click="ConnectIPCamera_Click" Margin="390,65,90,10" RenderTransformOrigin="0.794,0.972"/>
-                <Button Content="Disconnect" Width="75" Height="25" Click="DisonnectIPCamera_Click" Margin="470,65,10,10"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="86,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+                <Label Content="Port No." HorizontalAlignment="Left" VerticalAlignment="Top" Margin="390,10,0,0"/>
+                <TextBox Name="HostPort" HorizontalAlignment="Left" Height="23" Margin="86,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+                <Button Content="Connect" Width="75" Click="ConnectIPCamera_Click" Margin="390,65,90,8" RenderTransformOrigin="0.794,0.972"/>
+                <Button Content="Disconnect" Width="75" Click="DisonnectIPCamera_Click" Margin="470,65,10,8"/>
+                <TextBox Name="HostAddress" HorizontalAlignment="Left" Height="23" Margin="448,13,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97"/>
                 <Label Content="UserName:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="86,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+                <TextBox Name="HostUserName" HorizontalAlignment="Left" Height="23" Margin="86,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
                 <Label Content="Password:" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top"/>
-                <TextBox HorizontalAlignment="Left" Height="23" Margin="86,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="287"/>
+                <PasswordBox Name="HostPassword" Width="287" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="86,69,0,0" Height="21"/>
             </Grid>
         </GroupBox>
 
         <Grid Name="CameraBox" Margin="10,137,10,116" />
 
-        <GroupBox Header="Functions" Margin="10,438,10,10"/>
+        <GroupBox Header="Functions" Margin="10,438,10,41"/>
+        <Label Name="statusBar" Content="Status: Not Connected" HorizontalAlignment="Left" Margin="10,533,0,0" VerticalAlignment="Top" Width="772"/>
+
 
     </Grid>
 </Window>
